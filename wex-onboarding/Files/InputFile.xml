@@ -1,0 +1,106 @@
+<PaymentFile type="AOD"
+             version="2.0">
+	<PaymentDetail>
+		<PaymentID>4979396</PaymentID>
+		<SourceAccountName>SNAParticipant1</SourceAccountName>
+		<SourceAccountAddressLine1>Fake Street 586</SourceAccountAddressLine1>
+		<SourceAccountAddressLine2/>
+		<SourceAccountAddressLine3/>
+		<SourceAccountAddressCity>Chicago</SourceAccountAddressCity>
+		<SourceAccountAddressState>IL</SourceAccountAddressState>
+		<SourceAccountAddressZipCode>55555</SourceAccountAddressZipCode>
+		<ConsumerIdentifierDisplayName>Participant Account ID</ConsumerIdentifierDisplayName>
+		<ConsumerCommunicationId>131400004</ConsumerCommunicationId>
+		<EMailIndicator>0</EMailIndicator>
+		<ConsumerFirstName>ConsumerCSP1314-4</ConsumerFirstName>
+		<ConsumerMiddleName/>
+		<ConsumerLastName>ConsumerCSP1314-4</ConsumerLastName>
+		<ConsumerSSN>131400004</ConsumerSSN>
+		<ConsumerDOB>1985-01-01T00:00:00</ConsumerDOB>
+		<PayeeFullName>ConsumerCSP1314-4 ConsumerCSP1314-4</PayeeFullName>
+		<PayeeAddressLine1>4</PayeeAddressLine1>
+		<PayeeAddressLine2/>
+		<PayeeAddressLine3/>
+		<PayeeAddressCity>4</PayeeAddressCity>
+		<PayeeAddressState>UT</PayeeAddressState>
+		<PayeeAddressZipCode>15158</PayeeAddressZipCode>
+		<PayeeAddressCountryCode>US</PayeeAddressCountryCode>
+		<PayeeAddressCountryName>UNITED STATES</PayeeAddressCountryName>
+		<Reprint>False</Reprint>
+		<PaymentNumber>0000000325</PaymentNumber>
+		<PaymentDate>2023-01-11T00:00:00</PaymentDate>
+		<PaymentAmount>0.0100</PaymentAmount>
+		<PaymentAmountLongHand>Zero Dollars And One Cent</PaymentAmountLongHand>
+		<CheckInformation/>
+		<LogoImage>LSNC</LogoImage>
+		<SignatureImage/>
+		<EmployerName>CSP1314</EmployerName>
+		<EmployerCode>1314</EmployerCode>
+		<EmployerDivision>Division1</EmployerDivision>
+		<BusinessParty>SNC</BusinessParty>
+		<AdministratorCode>SNC</AdministratorCode>
+		<ContactAdministratorName>NiSmotriC Automation - Do Not Use!</ContactAdministratorName>
+		<ContactName>SNAParticipant1</ContactName>
+		<ContactAddressLine1>Fake Street 586</ContactAddressLine1>
+		<ContactAddressLine2/>
+		<ContactAddressLine3/>
+		<ContactAddressCity>Chicago</ContactAddressCity>
+		<ContactAddressState>IL</ContactAddressState>
+		<ContactAddressZipCode>55555</ContactAddressZipCode>
+		<ContactPhoneNumber>123-123-1234</ContactPhoneNumber>
+		<ContactTollFreeNumber>111-123-7894</ContactTollFreeNumber>
+		<ContactFaxNumber>222-222-2222</ContactFaxNumber>
+		<ContactEmailAddress>NikolaiSmotritsky@coherentsolutions.com</ContactEmailAddress>
+		<CustomText>test text to exceed the limit test text to exceed the limit test text to exceed the limit test text ttest text to exceed the limit test text to exceed the limit test text to exceed the limit test text ttest text to exceed the limit test text to exceed the limit test text to exceed the limit test text ttest text to exceed the limit test text to exceed the limit test text to exceed the limit test text ttest text to exceed the limit test text to exceed the limit test text to exceed the limit test text ttest text to exceed the limit test text to exceed the limit test text to exceed the limit test text ttest text to exceed the limit test text to exceed the limit test text to exceed the limit test text ttest text to exceed the limit test text to exceed the limit test text to exceed the limit test text ttest text to exceed the limit test text to exceed the limit test text to exceed the limit test text ttest text to exceed the limit test text to exceed the limit test text to exceed the limit t</CustomText>
+		<ReimbursementEOB>
+			<TransactionTable>
+				<TransactionHeader>Claims included in the Payment</TransactionHeader>
+				<TransactionDetail>
+					<PlanName>TRN-P-CX-00</PlanName>
+					<ServiceStartDate>2022-12-21T00:00:00</ServiceStartDate>
+					<ServiceEndDate>2022-12-21T00:00:00</ServiceEndDate>
+					<ReimbursementDate>2023-01-11T00:00:00</ReimbursementDate>
+					<BatchNumber>1</BatchNumber>
+					<ClaimNumber>1314230110W0000201</ClaimNumber>
+					<TransactionAmount>0.0100</TransactionAmount>
+					<PaidAmount>0.0100</PaidAmount>
+					<PendingAmount>0.0000</PendingAmount>
+					<DeniedAmount>0.0000</DeniedAmount>
+					<AmountThisCycle>0.0100</AmountThisCycle>
+					<MerchantProvider>ZXsEYmYjfo</MerchantProvider>
+				</TransactionDetail>
+			</TransactionTable>
+			<PlanBalanceTable>
+				<PlanDetail>
+					<PlanName>TRN-M-CX-00</PlanName>
+					<EligibleAmount>43200.0000</EligibleAmount>
+					<IgnoreEligibleAmount>True</IgnoreEligibleAmount>
+					<SubmittedClaims>0.0400</SubmittedClaims>
+					<PaidAmount>0.0400</PaidAmount>
+					<PendingAmount>0.0000</PendingAmount>
+					<DeniedAmount>0.0000</DeniedAmount>
+					<PlanYearBalance>43199.9600</PlanYearBalance>
+					<IgnorePlanYearBalance>False</IgnorePlanYearBalance>
+					<YTDContributionAmount>27800.0000</YTDContributionAmount>
+				</PlanDetail>
+				<PlanDetail>
+					<PlanName>TRN-P-CX-00</PlanName>
+					<EligibleAmount>43200.0000</EligibleAmount>
+					<IgnoreEligibleAmount>True</IgnoreEligibleAmount>
+					<SubmittedClaims>3.8200</SubmittedClaims>
+					<PaidAmount>3.4500</PaidAmount>
+					<PendingAmount>0.3700</PendingAmount>
+					<DeniedAmount>0.0000</DeniedAmount>
+					<PlanYearBalance>43196.1800</PlanYearBalance>
+					<IgnorePlanYearBalance>False</IgnorePlanYearBalance>
+					<YTDContributionAmount>27800.0000</YTDContributionAmount>
+				</PlanDetail>
+			</PlanBalanceTable>
+		</ReimbursementEOB>
+		<ClaimForms>
+			<Image type="Logo"
+			       contenttype="image/jpeg"/>
+			<FormDetailTable/>
+		</ClaimForms>
+	</PaymentDetail>
+</PaymentFile>
