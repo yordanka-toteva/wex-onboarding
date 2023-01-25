@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Files\InputFile.xml" />
+    <None Remove="Files\SNC_AOD_01102023_061442.xml.zip" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Files\InputFile.xml">
+    <Content Include="Files\SNC_AOD_01102023_061442.xml.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
