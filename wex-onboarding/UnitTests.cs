@@ -9,7 +9,7 @@ namespace wex_onboarding
     {
         private readonly string srcFile = @"Files\SNC_AOD_01102023_061442.xml.zip";
         private readonly string destFolder = "OutputFiles";
-        private string pathToExtractedFile = null;
+        private string pathToExtractedFile;
 
         [Test]
         public void VerifyTheTotalPaidAmount()
