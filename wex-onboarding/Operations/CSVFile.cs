@@ -165,67 +165,54 @@ namespace wex_onboarding.Operations
                             ValidationMessage = $"The maximum length of the {nameof(Contribution.ContributionAmount)} property is 13."
                         });
                     }
-
-                    if (!contribution.ContributionAmount.All(c => char.IsDigit(c)))
+                    decimal contributionAmount;
+                    bool isAmountValidDecimal = Decimal.TryParse(contribution.ContributionAmount, NumberStyles.AllowDecimalPoint,
+                            CultureInfo.GetCultureInfo("en-US"),
+                            out contributionAmount);
+                    if (!isAmountValidDecimal)
                     {
                         validations.Add(new Validation()
                         {
                             PropertyName = nameof(Contribution.ContributionAmount),
                             IsValid = false,
-                            ValidationMessage = $"The {nameof(Contribution.ContributionAmount)} property must contain only digits."
+                            ValidationMessage = $"The value of the {nameof(Contribution.ContributionAmount)} property is not valid."
+                        });
+                    }
+
+                    if (contribution.ContributionAmount.Contains(".") &&
+                        contribution.ContributionAmount.Substring(contribution.ContributionAmount.IndexOf('.')).Length > 2)
+                    {
+                        validations.Add(new Validation()
+                        {
+                            PropertyName = nameof(Contribution.ContributionAmount),
+                            IsValid = false,
+                            ValidationMessage = $"Only 2 decimal places are allowed after the decimal separator for the {nameof(Contribution.ContributionAmount)} property."
                         });
                     }
                     else
                     {
-                        decimal contributionAmount;
-                        bool isAmountValidDecimal = Decimal.TryParse(contribution.ContributionAmount, NumberStyles.AllowDecimalPoint,
-                            CultureInfo.GetCultureInfo("en-US"),
-                            out contributionAmount);
-                        if(!isAmountValidDecimal)
+                        if (contribution.PlanName.Contains("HSA"))
                         {
-                            validations.Add(new Validation()
+                            if (contributionAmount < 0M || contributionAmount > 999999999.99M)
                             {
-                                PropertyName = nameof(Contribution.ContributionAmount),
-                                IsValid = false,
-                                ValidationMessage = $"The value of the {nameof(Contribution.ContributionAmount)} property is not valid."
-                            });
-                        }
-
-                        if (contribution.ContributionAmount.Contains(".") &&
-                            contribution.ContributionAmount.Substring(contribution.ContributionAmount.IndexOf('.')).Length > 2)
-                        {
-                            validations.Add(new Validation()
-                            {
-                                PropertyName = nameof(Contribution.ContributionAmount),
-                                IsValid = false,
-                                ValidationMessage = $"Only 2 decimal places are allowed after the decimal separator for the {nameof(Contribution.ContributionAmount)} property."
-                            });
+                                validations.Add(new Validation()
+                                {
+                                    PropertyName = nameof(Contribution.ContributionAmount),
+                                    IsValid = false,
+                                    ValidationMessage = $"For HSA plans the values of the {nameof(Contribution.ContributionAmount)} property cannot negative and greater than 999999999.99."
+                                });
+                            }
                         }
                         else
                         {
-                            if (contribution.PlanName.Contains("HSA"))
+                            if (contributionAmount < -999999999.99M || contributionAmount > 999999999.99M)
                             {
-                                if (contributionAmount < 0M || contributionAmount > 999999999.99M)
+                                validations.Add(new Validation()
                                 {
-                                    validations.Add(new Validation()
-                                    {
-                                        PropertyName = nameof(Contribution.ContributionAmount),
-                                        IsValid = false,
-                                        ValidationMessage = $"For HSA plans the values of the {nameof(Contribution.ContributionAmount)} property cannot negative and greater than 999999999.99."
-                                    });
-                                }
-                            }
-                            else
-                            {
-                                if (contributionAmount < -999999999.99M || contributionAmount > 999999999.99M)
-                                {
-                                    validations.Add(new Validation()
-                                    {
-                                        PropertyName = nameof(Contribution.ContributionAmount),
-                                        IsValid = false,
-                                        ValidationMessage = $"For non-HSA plans the values of the {nameof(Contribution.ContributionAmount)} property must be between -999999999.99 and 999999999.99."
-                                    });
-                                }
+                                    PropertyName = nameof(Contribution.ContributionAmount),
+                                    IsValid = false,
+                                    ValidationMessage = $"For non-HSA plans the values of the {nameof(Contribution.ContributionAmount)} property must be between -999999999.99 and 999999999.99."
+                                });
                             }
                         }
                     }
