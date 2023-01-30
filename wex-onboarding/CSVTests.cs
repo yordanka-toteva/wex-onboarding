@@ -16,17 +16,18 @@ namespace wex_onboarding
         private Contribution contrRow1 = new Contribution()
         {
             EmployeeIdentifier = "123456789",
-            ContributionDate = "10-10-2022",
-            ContributionDescription = "Employ",
-            ContributionAmount = 1000,
-            PlanName = "HSA"
+            ContributionDate = "10/10/2022",
+            ContributionDescription = "Pay",
+            ContributionAmount = "1000.000",
+            PlanName = "HSA",
+            PriorTaxYear = "Priory"
         };
         private Contribution contrRow2 = new Contribution()
         {
             EmployeeIdentifier = "1a3456789",
             ContributionDate = "12/12/2022",
             ContributionDescription = "Employ",
-            ContributionAmount = 1000,
+            ContributionAmount = "1000.00",
             PlanName = "HSA"
         };
         private Contribution contrRow3 = new Contribution()
@@ -34,7 +35,7 @@ namespace wex_onboarding
             EmployeeIdentifier = "12345678",
             ContributionDate = "12/12/2022",
             ContributionDescription = "Employ",
-            ContributionAmount = 1000,
+            ContributionAmount = "1000.00",
             PlanName = "HSA"
         };
         private Contribution contrRow4 = new Contribution()
@@ -42,7 +43,7 @@ namespace wex_onboarding
             EmployeeIdentifier = "",
             ContributionDate = "12/12/2022",
             ContributionDescription = "Employ",
-            ContributionAmount = 1000,
+            ContributionAmount = "1000.00",
             PlanName = "HSA"
         };
 
