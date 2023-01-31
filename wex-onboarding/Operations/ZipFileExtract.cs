@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
-using System.Text;
 
 namespace wex_onboarding.Operations
 {
@@ -30,17 +28,6 @@ namespace wex_onboarding.Operations
             }
 
             return pathToExtractedFile;
-        }
-
-        
-        public static void DeleteFileAndDirectory(string pathToExtractedFile)
-        {
-            string directoryName = Path.GetDirectoryName(pathToExtractedFile);
-
-            if (Directory.Exists(directoryName))
-            {
-                Directory.Delete(directoryName, true);
-            }
         }
     }
 }

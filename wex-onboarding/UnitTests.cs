@@ -27,7 +27,7 @@ namespace wex_onboarding
         [TearDown]
         public void TearDown()
         {
-            ZipFileExtract.DeleteFileAndDirectory(pathToExtractedFile);
+            FileCommon.DeleteFileAndDirectory(destFolder);
         }
     }
 }

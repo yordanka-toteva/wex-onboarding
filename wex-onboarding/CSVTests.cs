@@ -2,7 +2,6 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using wex_onboarding.CSV;
 using wex_onboarding.Operations;
-using wex_onboarding.XMLToObject;
 
 namespace wex_onboarding
 {
@@ -12,60 +11,54 @@ namespace wex_onboarding
         private readonly string destFolder = "Download";
         private readonly string fileName = "Contribution.csv";
         string pathToExtractedFile;
+        bool isCSVFileCreated;
+
         private List<Contribution> contributions;
         private Contribution contrRow1 = new Contribution()
         {
             EmployeeIdentifier = "123456789",
-            ContributionDate = "10/10/2022",
-            ContributionDescription = "Pay",
-            ContributionAmount = "1000.000",
+            ContributionDate = "12122022",
+            ContributionDescription = "Employer",
+            ContributionAmount = "10000000.00",
             PlanName = "HSA",
-            PriorTaxYear = "Priory"
+            PriorTaxYear = "Current"
         };
         private Contribution contrRow2 = new Contribution()
         {
-            EmployeeIdentifier = "1a3456789",
-            ContributionDate = "12/12/2022",
-            ContributionDescription = "Employ",
-            ContributionAmount = "1000.00",
-            PlanName = "HSA"
-        };
-        private Contribution contrRow3 = new Contribution()
-        {
-            EmployeeIdentifier = "12345678",
-            ContributionDate = "12/12/2022",
-            ContributionDescription = "Employ",
-            ContributionAmount = "1000.00",
-            PlanName = "HSA"
-        };
-        private Contribution contrRow4 = new Contribution()
-        {
-            EmployeeIdentifier = "",
-            ContributionDate = "12/12/2022",
-            ContributionDescription = "Employ",
-            ContributionAmount = "1000.00",
-            PlanName = "HSA"
+            EmployeeIdentifier = "123456789",
+            ContributionDate = "12122022",
+            ContributionDescription = "Employer",
+            ContributionAmount = "10000000.00",
+            PlanName = "FSA",
+            PriorTaxYear = "Current"
         };
 
-        [SetUp]
-        public void Setup()
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
         {
-            //CSVFile.DeleteFileAndDirectory(destFolder);
+            FileCommon.DeleteFileAndDirectory(destFolder);
         }
 
-
         [Test]
-        public void VerifyTheTotalPaidAmount()
+        public void VerifyIfCSVFileIsCreated()
         {
             contributions = new List<Contribution>();
             contributions.Add(contrRow1);
-            //contributions.Add(contrRow2);
-            //contributions.Add(contrRow3);
-            //contributions.Add(contrRow4);
+            contributions.Add(contrRow2);
 
             pathToExtractedFile = CSVFile.CreateCSV(contributions, destFolder, fileName);
+            isCSVFileCreated = FileCommon.CheckFileExists(pathToExtractedFile);
+
+            Assert.IsTrue(isCSVFileCreated, "A CSV file with data was not created.");
+        }
+
+        [Test]
+        public void VerifyIfCSVFileIsValid()
+        {
             var data = CSVFile.ReadCSV(pathToExtractedFile);
-            var validations = CSVFile.ValidateCSVContent(data);
+            var validationResult = CSVFile.ValidateCSVContent(data).Item1;
+
+            Assert.IsTrue(validationResult, "The data in the CSV file is not valid.");
         }
     }
 }

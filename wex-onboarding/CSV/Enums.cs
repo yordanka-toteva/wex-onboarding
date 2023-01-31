@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace wex_onboarding.CSV
+﻿namespace wex_onboarding.CSV
 {
     public enum ContributionDescription
     {

@@ -1,6 +1,5 @@
-﻿using System.Xml.Serialization;
-using System.IO;
-using wex_onboarding.XMLToObject;
+﻿using System.IO;
+using System.Xml.Serialization;
 
 namespace wex_onboarding.Operations
 {
