@@ -182,6 +182,16 @@ namespace wex_onboarding.Operations
                         });
                     }
 
+                    if (contribution.ContributionAmount.Length > 13)
+                    {
+                        validations.Add(new Validation()
+                        {
+                            PropertyName = nameof(Contribution.ContributionAmount),
+                            IsValid = false,
+                            ValidationMessage = $"The maximum length of the {nameof(Contribution.ContributionAmount)} property is 13."
+                        });
+                    }
+
                     if (contribution.ContributionAmount.Contains(".") && contribution.ContributionAmount.Substring(contribution.ContributionAmount.IndexOf('.') + 1).Length > 2)
                     {
                         validations.Add(new Validation()
